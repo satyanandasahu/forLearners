@@ -11,13 +11,6 @@ public class ExceptionHierachy {
 		 
 		
 		
-		try {
-			
-		}catch(FileNotFoundException e) {
-			
-		}catch(IOException e) {
-			
-		} 
 	}
 
 }

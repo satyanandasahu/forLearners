@@ -58,7 +58,7 @@ public class ExternalQueue<T> {
 			queue.queue("Value " + i);
 			System.out.println("Value " + i);
 		}
-		queue.expandQueue(String.class, 20);
+	//	queue.expandQueue(String.class, 20);
 		for (int i = 0; i < 10; i++) {
 			queue.queue("value" + (i + 10));
 			System.out.println("Value " + (i + 10));
@@ -70,17 +70,7 @@ public class ExternalQueue<T> {
 			if (deQueueValue != null && !deQueueValue.isEmpty())
 				System.out.println(deQueueValue);
 		}
-
-		ExternalStack<Integer> stac = new ExternalStack<Integer>(Integer.class, 10);
-		System.out.println("Queuing started");
-		for (int i = 0; i < 11; i++) {
-			stac.push(i);
-		}
-		System.out.println("deQueuing started");
-		for (int i = 0; i < 10; i++) {
-			System.out.println(stac.pop());
-		}
-
+		
 		System.out.println("----------------------");
 		queue.queue("q");
 		queue.queue("w");

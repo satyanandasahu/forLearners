@@ -30,7 +30,7 @@ public class StringExample {
 		
 		
 		
-/*
+
 		//String literals
 		String s1 = "Satya"; 
 		String a ="abc";
@@ -84,7 +84,7 @@ public class StringExample {
 			
 		System.out.println();
 
-		*/
+		
 		}
 
 }

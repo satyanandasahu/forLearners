@@ -15,8 +15,8 @@ public class TestThread {
 	public static void main(String[] args) {
 	/*	
 		System.out.println("current thread name " + Thread.currentThread().getName());
-		UserRunnable hwr = new UserRunnable("Hello World - runnable");
-		UserRunnable her = new UserRunnable("Hello Earth - runnable");
+		UserRunnable hwr = new UserRunnable("Hello World - runnable",1000);
+		UserRunnable her = new UserRunnable("Hello Earth - runnable",1000);
 		Thread t1 = new Thread(hwr);
 		Thread t2 = new Thread(her);
 				
@@ -25,6 +25,7 @@ public class TestThread {
 		
 		t1.setName("T1");
 		t2.setName("T2");
+		t1.setPriority(10);
 		hwt.setName("UT1");
 		het.setName("UT2");
 		hwt.start();
@@ -40,10 +41,13 @@ public class TestThread {
 		System.out.println("Before execute");
 		Future future = null;
 		ArrayList<Future> futureList = new ArrayList<Future>();
-		for(int i=0; i<10; i++) {
-			future = executorService.submit(new UserCallable("Thread-"+(i+1)));
+		//for(int i=0; i<10; i++) {
+			future = executorService.submit(new UserCallable("Thread- Full Name:  Satyanada Sahu"));
 			futureList.add(future);
-		}
+			future = executorService.submit(new UserCallable("Thread- People across world given Name:  Satya"));
+			futureList.add(future);
+		//}
+		
 		System.out.println("after execute");
 		for (Iterator iterator = futureList.iterator(); iterator.hasNext();) {
 			future = (Future) iterator.next();
@@ -58,5 +62,6 @@ public class TestThread {
 		}
 		if (!executorService.isShutdown())
 			executorService.shutdown();
+		
 	}
 }
